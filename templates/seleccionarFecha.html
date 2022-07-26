@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1>Seleccionar Fecha</h1>
+    <form method="POST">
+        {{formulario.csrf_token}}
+        <p>
+            {{formulario.fecha_hora.label}}<br>
+            {{formulario.fecha_hora(size=30)}}
+        </p>
+        <p>
+            {{formulario.consultar()}}
+        </p>
+    </form>
+{% endblock %}

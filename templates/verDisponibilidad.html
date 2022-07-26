@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1>Lista de disponibilidad</h1>
+    <div>
+        <table class="table">
+            <thead>
+            <th>Mesa disponible</th>
+            </thead>
+            <tbody>
+            {% for mesa in mesas %}
+                <tr>
+                    <td>{{mesa.id_mesa}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

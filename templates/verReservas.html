@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <h1>Reservas</h1>
+    <div>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <th>Cédula</th>
+            <th>Cliente</th>
+            <th>Mesa</th>
+            <th>Fecha</th>
+            <th></th>
+            </thead>
+            <tbody>
+            {% for reserva,usuario in resultados %}
+                <tr>
+                    <td>{{usuario.cedula}}</td>
+                    <td>{{usuario.nombre}} {{usuario.apellido}}</td>
+                    <td>{{reserva.id_mesa}}</td>
+                    <td>{{reserva.fecha_hora}}</td>
+                    <td><a href="/anular/{{reserva.id_reserva}}">Anular</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

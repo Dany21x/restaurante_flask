@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1>Registrar Usuario</h1>
+    <form method="POST">
+        {{formulario.csrf_token}}
+        <p>
+            {{formulario.cedula.label}}<br>
+            {{formulario.cedula(size=30)}}
+        </p>
+        <p>
+            {{formulario.nombre.label}}<br>
+            {{formulario.nombre(size=30)}}
+        </p>
+        <p>
+            {{formulario.apellido.label}}<br>
+            {{formulario.apellido(size=30)}}
+        </p>
+        <p>
+            {{formulario.email.label}}<br>
+            {{formulario.email(size=30)}}
+        </p>
+        <p>
+            {{formulario.telefono.label}}<br>
+            {{formulario.telefono(size=30)}}
+        </p>
+        <p>
+            {{formulario.registrar()}}
+        </p>
+    </form>
+{% endblock %}

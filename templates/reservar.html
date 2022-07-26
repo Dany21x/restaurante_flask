@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1>Registrar Reserva</h1>
+    <form method="POST">
+        {{formulario.csrf_token}}
+        <p>
+            <div class="form-group">
+            {{formulario.id_usuario.label}}<br>
+            {{formulario.id_usuario(class='form-control')}}
+            </div>
+
+        </p>
+        <p>
+            <div class="form-group">
+            {{formulario.id_mesa.label}}<br>
+            {{formulario.id_mesa(class='form-control')}}
+            </div>
+        </p>
+
+        <p>
+            {{formulario.fecha_hora.label}}<br>
+            {{formulario.fecha_hora(size=30)}}
+        </p>
+
+        <p>
+            {{formulario.registrar()}}
+        </p>
+    </form>
+{% endblock %}
